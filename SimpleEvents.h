@@ -9,13 +9,16 @@ typedef struct {
 typedef struct {
     int topic;
     idcb * cb_s;
+    int elements;
     
 } topicsCallbacks;
 
 class SimpleEvents {
     private:
+    int numTopics;
     topicsCallbacks * topics;
     public:
+    ~SimpleEvents();
     SimpleEvents(int);
     void publish(int, void*);
     void subscribe(int, int, void (*callback)(void*));
