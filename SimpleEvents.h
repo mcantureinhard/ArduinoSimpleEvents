@@ -22,6 +22,7 @@ class SimpleEvents {
     SimpleEvents(int);
     void publish(int, void*);
     void subscribe(int, int, void (*callback)(void*));
+    //TODO: void unsubscribe(int, int)
 };
 
 #endif
